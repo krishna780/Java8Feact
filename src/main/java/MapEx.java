@@ -5,11 +5,8 @@ import java.util.stream.Collectors;
 
 public class MapEx {
     public static void main(String[] args) {
-        List<Dish> list=Dish.menu;
-        HashMap<String, Integer> collect = list.stream()
-                .sorted(Comparator.comparingInt(Dish::getCalories))
-                .collect(Collectors.toMap(Dish::getName,
-                        Dish::getCalories, (o1, o2) -> o2, HashMap::new));
-        System.out.println(collect);
+        List<Integer> list=List.of(15,23,100,150,136);
+    double d= list.stream().filter(s->s>=100).collect(Collectors.summingDouble(k->k));
+    System.out.println(d);
     }
 }

@@ -6,7 +6,16 @@ import java.util.List;
 
 public class JavaFile {
     public static void main(String[] args) throws IOException {
-        List<String> list = Files.readAllLines(Path.of("src/main/java/Application/Files"));
-        System.out.println(list);
+        String list = Files.readString(Path.of("src/main/java/Application/Files"));
+        String[] split = list.split("\\R");
+        for (String st:split){
+           StrBoolean(st);
+       }
+    }
+
+    private static void StrBoolean(String st) {
+        String[] split = st.split("\\n\n");
+        for (String s: split)
+        System.out.println(s);
     }
 }
