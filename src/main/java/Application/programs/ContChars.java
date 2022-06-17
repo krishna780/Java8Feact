@@ -2,7 +2,6 @@ package Application.programs;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
