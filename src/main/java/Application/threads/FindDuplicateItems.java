@@ -2,7 +2,6 @@ package Application.threads;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class FindDuplicateItems {
     public static void main(String[] args) {
@@ -15,7 +14,7 @@ public class FindDuplicateItems {
         myList.stream().max(Integer::compareTo).ifPresent(System.out::println);
 
        String str="welcome to java";
-       HashSet hs=new HashSet<>();
+       HashSet<Object> hs=new HashSet<>();
         Set<String> booleans = Arrays.stream(str.split("")).filter(s -> !hs.add(s))
                 .collect(Collectors.toSet());
         System.out.println(booleans);
