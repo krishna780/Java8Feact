@@ -1,5 +1,6 @@
 package Application.datetimeapi;
 
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
@@ -15,7 +16,7 @@ public class dateTime {
 
         ZonedDateTime zoned = ZonedDateTime.now();
         ZoneOffset offset = zoned.getOffset();
-        System.out.println(offset+" "+ zoned.format(timeFormatter));
+        System.out.println(offset + " " + zoned.format(timeFormatter));
         ZonedDateTime dateTime = zoned.withZoneSameInstant(ZoneId.of("Asia/Tokyo"));
         System.out.println(timeFormatter.format(dateTime));
 

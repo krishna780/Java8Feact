@@ -16,10 +16,10 @@ public class SortByValueExample {
         unSortMap.put("g", 50);
         unSortMap.put("m", 2);
         unSortMap.put("f", 9);
-        Map<String, Integer> result =  unSortMap.entrySet().stream()
+        Map<String, Integer> result = unSortMap.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue())
-                .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue,
-                        (o1,o2)->o2, HashMap::new));
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (o1, o2) -> o2, HashMap::new));
         System.out.println(result);
 
     }

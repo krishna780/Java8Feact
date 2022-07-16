@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class ContChars {
     public static void main(String[] args) {
-        String str="abcdABCDabcd";
+        String str = "abcdABCDabcd";
         String[] split = str.split("");
         HashMap<String, Long> collect = Arrays.stream(split).collect(Collectors.groupingBy(Function.identity(),
                 HashMap::new, Collectors.counting()));

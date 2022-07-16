@@ -1,4 +1,3 @@
-
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -24,7 +23,7 @@ public class FilterExample {
         Map<Float, Long> map = productsList.stream().collect(Collectors.groupingBy(Product::getPrice, Collectors.counting()));
         System.out.println(map);
         List<String> list = productsList.stream()
-                .filter(s->!s.getName().isBlank())
+                .filter(s -> !s.getName().isBlank())
                 .map(Product::getName).collect(Collectors.toList());
         System.out.println(list);
     }

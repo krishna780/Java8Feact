@@ -16,6 +16,6 @@ public class HashMapSort {
         scores.put("Dino", 65);
         Stream<Map.Entry<String, Integer>> sorted = scores.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue());
-            sorted.forEach(System.out::println);
+        sorted.forEach(System.out::println);
     }
 }
