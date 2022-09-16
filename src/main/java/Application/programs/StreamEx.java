@@ -1,3 +1,7 @@
+package Application.programs;
+
+import Application.programs.Dish;
+
 import java.util.*;
 import java.util.stream.Collectors;
 

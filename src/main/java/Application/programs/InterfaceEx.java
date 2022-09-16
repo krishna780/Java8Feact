@@ -1,4 +1,4 @@
-package Application;
+package Application.programs;
 interface a{
     default String methodA() {
         return "welcome a";

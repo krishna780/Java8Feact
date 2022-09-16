@@ -5,7 +5,8 @@ import java.util.concurrent.*;
 public class CallableEx {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newCachedThreadPool();
-        Future<String> future = executorService.submit(new Task("krishna"));
+        Future<String> future = executorService.submit(new
+                Task("krishna"));
         System.out.println(future.get());
     }
 

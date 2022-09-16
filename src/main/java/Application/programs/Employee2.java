@@ -1,4 +1,4 @@
-package Application;
+package Application.programs;
 
 public class Employee2 extends Employee {
     public Employee2(Long empId, int salary) {

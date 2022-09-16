@@ -1,4 +1,4 @@
-package Application;
+package Application.programs;
 
 public class FibonaciEx {
     public static void main(String[] args) {
