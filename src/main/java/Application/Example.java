@@ -1,5 +1,8 @@
 package Application;
 
+import Application.programs.Employee;
+import Application.programs.Employee2;
+
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;

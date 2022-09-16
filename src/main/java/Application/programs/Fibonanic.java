@@ -1,3 +1,5 @@
+package Application.programs;
+
 public class Fibonanic {
     public static void main(String[] args) {
         int i = 1, j = 0, s = 0;

@@ -1,3 +1,5 @@
+package Application.programs;
+
 public class FactorialExample {
     public static void main(String[] args) {
         int k = 1;

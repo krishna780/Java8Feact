@@ -1,3 +1,5 @@
+package Application.programs;
+
 public class PrimeNum {
     public static void main(String[] args) {
         boolean prime = isPrime(15);
