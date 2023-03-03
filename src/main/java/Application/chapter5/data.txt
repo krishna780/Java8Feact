@@ -1,0 +1,11 @@
+name,id,age,sal
+krishna,123,76,3533
+kanth,13,7,353
+gopi,23,6,333
+job,3,768,533
+money,12,176,3530
+
+name,id
+kri,02
+kan,32
+
