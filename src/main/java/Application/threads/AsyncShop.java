@@ -13,7 +13,7 @@ public class AsyncShop {
 
     public AsyncShop(String name) {
         this.name = name;
-        random = new Random(name.charAt(0) * name.charAt(1) * name.charAt(2));
+        random = new Random((long) name.charAt(0) * name.charAt(1) * name.charAt(2));
     }
 
     public Future<Double> getPrice(String product) {
