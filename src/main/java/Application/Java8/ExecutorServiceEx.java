@@ -4,13 +4,15 @@ package Application.Java8;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class ExecutorServiceEx {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         Student student=new Student(123,"gopi",34);
         Student student1=new Student(123,"kri",32);
@@ -24,9 +26,8 @@ public class ExecutorServiceEx {
             }
         };
        ExecutorService executor= Executors.newFixedThreadPool(10);
-       executor.submit(runnable);
-
-       List<String> ls= ExecutorServiceEx.getPersonName(list, Student::getName);
+        executor.submit(runnable);
+        List<String> ls= ExecutorServiceEx.getPersonName(list, Student::getName);
 
         System.out.println(ls);
 

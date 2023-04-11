@@ -16,8 +16,7 @@ public class ClientTest {
         Student student1=new Student(123,"kri",32);
         Student student2=new Student(123,"ravi",33);
         Student student3=new Student(123,"hari",19);
-
-        List<Student> list = new ArrayList<>(List.of(student, student1, student2, student3));
+        List<Student> list = List.of(student, student1, student2, student3);
         List<Student> collect = list.stream().sorted(Comparator.comparing(Student::getName)).collect(Collectors.toList());
         for (Student s:collect){
             System.out.println(s);

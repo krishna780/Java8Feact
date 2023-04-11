@@ -20,7 +20,8 @@ public class FilterSort {
 
         Map<Dish.Type, List<Dish>> listMap = menu.get().stream().collect(Collectors.groupingBy(Dish::getType));
 
-        List<String> limit = menu.get().parallelStream().filter(s -> s.getCalories() > 300).limit(3).map(Dish::getName).collect(Collectors.toList());
+        List<String> limit = menu.get().parallelStream().filter(s -> s.getCalories() > 300).limit(3)
+                .map(Dish::getName).collect(Collectors.toList());
         Optional<List<String>> asList =Optional.of(Arrays.asList("java", "as", "list"));
         asList=Optional.of(asList.get().stream().sorted().collect(Collectors.toList()));
 

@@ -8,7 +8,7 @@ import org.apache.commons.lang3.ObjectUtils;
 
 @Builder
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Employee {
     int id;
     String name;

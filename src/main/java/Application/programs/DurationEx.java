@@ -7,10 +7,6 @@ import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAdjuster;
 
 public class DurationEx implements TemporalAdjuster {
-    public static void main(String[] args) {
-
-
-    }
 
     @Override
     public Temporal adjustInto(Temporal temporal) {
