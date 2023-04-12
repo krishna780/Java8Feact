@@ -19,6 +19,10 @@ public class Example {
         Map<Dish.Type, Dish> max = menu.stream().collect(groupingBy(Dish::getType,
                 collectingAndThen(toList(), s -> s.stream().max(Comparator.comparing(Dish::getCalories)).get())));
 
+
+
+        System.out.println(collect);
+
         String str="welcome to java";
         String[] split = str.split(" ");
         StringBuilder builder=new StringBuilder();
