@@ -4,6 +4,7 @@ import Application.programs.Dish;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static Application.programs.Dish.menu;
@@ -20,8 +21,13 @@ public class Example {
                 collectingAndThen(toList(), s -> s.stream().max(Comparator.comparing(Dish::getCalories)).get())));
 
 
+        Map<Dish.Type, List<String>> collect1 = menu.stream().collect(groupingBy(Dish::getType, mapping(Dish::getName, collectingAndThen(toList(),
+                e -> e.stream().sorted().collect(toList())))));
 
-        System.out.println(collect);
+        Map<Dish.Type, Map<String, List<Dish>>> collect2 = menu.stream().collect(groupingBy(Dish::getType, groupingBy(Dish::getName, collectingAndThen(toList(), s ->
+                s.stream().sorted(Comparator.comparing(Dish::getCalories)).collect(toList())))));
+
+        System.out.println(collect2);
 
         String str="welcome to java";
         String[] split = str.split(" ");
