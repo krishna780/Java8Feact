@@ -19,8 +19,6 @@ public class StreamEx {
         Optional<Integer> max = Dish.menu.stream().max(Comparator.comparingInt(Dish::getCalories)).map(Dish::getCalories);
 
         Optional<Dish> collect = Dish.menu.stream().filter(Dish::isVegetarian).findAny();
-        if (collect.isPresent()) {
-            System.out.println(collect);
-        }
+        collect.ifPresent(System.out::println);
     }
 }

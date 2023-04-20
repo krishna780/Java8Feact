@@ -11,6 +11,12 @@ public class SumOfNum {
         List<Integer> numbers1 = Arrays.asList(1, 2, 3,4);
         List<Integer> numbers2 = Arrays.asList(3, 4,5,6);
 
+
+        List<int[]> collect1 = numbers1.stream().flatMap(s -> numbers2.stream().filter(k -> (s + k) == 10).map(k -> new int[]{s, k})).collect(Collectors.toList());
+
+        for (int[] l:collect1){
+            System.out.println(Arrays.toString(l));
+        }
         List<int[]> collect = numbers1.stream().flatMap(i -> numbers2.stream().filter(j -> (i + j) == 10)
                 .map(j -> new int[]{i, j})).collect(Collectors.toList());
         for (int[] in:collect){
