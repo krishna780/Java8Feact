@@ -10,5 +10,8 @@
         <module name="Java8Feact" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Java8and 11" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

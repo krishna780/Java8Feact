@@ -18,7 +18,8 @@ public class Java8Ex {
 
         Map<Dish.Type, List<Map.Entry<String, Integer>>> collect1 = menu.stream().collect(groupingBy(Dish::getType,
                 collectingAndThen(toList(), k -> k.stream()
-                        .collect(toMap(Dish::getName, Dish::getCalories)).entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(toList()))));
+                        .collect(toMap(Dish::getName, Dish::getCalories)).entrySet().stream()
+                        .sorted(Map.Entry.comparingByValue()).collect(toList()))));
 
         System.out.println(collect1);
 

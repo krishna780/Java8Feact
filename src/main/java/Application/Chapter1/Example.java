@@ -1,11 +1,13 @@
 package Application.Chapter1;
 
 import Application.programs.Dish;
+import org.apache.logging.log4j.util.PropertySource;
 
 import java.io.IOException;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static Application.programs.Dish.menu;
 import static java.util.stream.Collectors.*;
@@ -27,7 +29,10 @@ public class Example {
         Map<Dish.Type, Map<String, List<Dish>>> collect2 = menu.stream().collect(groupingBy(Dish::getType, groupingBy(Dish::getName, collectingAndThen(toList(), s ->
                 s.stream().sorted(Comparator.comparing(Dish::getCalories)).collect(toList())))));
 
-        System.out.println(collect2);
+
+        Map<Dish.Type, List<String>> listMap = menu.stream().collect(groupingBy(Dish::getType, mapping(Dish::getName,
+                collectingAndThen(toList(), s -> s.stream().sorted(Comparator.naturalOrder()).collect(toList())))));
+        System.out.println(listMap);
 
         String str="welcome to java";
         String[] split = str.split(" ");

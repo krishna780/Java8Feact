@@ -8,4 +8,8 @@ import lombok.Data;
 public class Employee {
     Long empId;
     int salary;
+
+    public Employee(long empId) {
+        this.empId=empId;
+    }
 }

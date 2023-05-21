@@ -21,6 +21,8 @@ public class ClientTest {
         for (Student s:collect){
             System.out.println(s);
         }
+        System.gc();
+
     }
 }
 
