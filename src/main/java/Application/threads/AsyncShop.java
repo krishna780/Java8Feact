@@ -16,7 +16,7 @@ public class AsyncShop {
         random = new Random((long) name.charAt(0) * name.charAt(1) * name.charAt(2));
     }
 
-    public Future<Double> getPrice(String product) {
+    public CompletableFuture<Double> getPrice(String product) {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 return calculatePrice(product);
