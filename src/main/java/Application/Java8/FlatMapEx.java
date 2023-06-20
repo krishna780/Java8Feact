@@ -1,6 +1,6 @@
 package Application.Java8;
 
-import Application.Developer;
+import Application.programs.Developer;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

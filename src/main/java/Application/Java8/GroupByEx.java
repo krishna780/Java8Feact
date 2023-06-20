@@ -18,7 +18,7 @@ public class GroupByEx {
                 new Item("watermelon", 10, new BigDecimal("29.99")),
                 new Item("papaya", 20, new BigDecimal("9.99")),
                 new Item("apple", 10, new BigDecimal("9.99")),
-                new Item("banana", 10, new BigDecimal("19.99")),
+                new Item("anana", 10, new BigDecimal("19.99")),
                 new Item("apple", 20, new BigDecimal("9.99")));
         Map<String, Optional<Item>> collect = items.stream().collect(Collectors.groupingBy(Item::getName,
                 Collectors.maxBy(Comparator.comparing(Item::getQty))));
@@ -33,8 +33,13 @@ public class GroupByEx {
                         s -> s.stream().map(Item::getPrice).sorted().collect(Collectors.toList()))));
 
 
-        Map<BigDecimal, String> collect3 = items.stream().collect(Collectors.toMap(Item::getPrice, Item::getName,(o1, o2) -> o1));
-        System.out.println(collect3);
+        Map<BigDecimal, String> collect3 = items.stream().collect(Collectors.toMap(Item::getPrice,
+                 Item::getName));
+        Map<BigDecimal, List<String>> collect4 = items.stream().collect(Collectors.groupingBy(Item::getPrice,
+                Collectors.collectingAndThen(Collectors.toList(), k -> k.stream().map(Item::getName)
+                        .sorted(Collections.reverseOrder()).collect(Collectors.toList()))));
+
+        System.out.println(collect4);
 
     }
 }

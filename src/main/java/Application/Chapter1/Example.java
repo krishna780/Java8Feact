@@ -16,17 +16,20 @@ import static java.util.stream.Collectors.*;
 public class Example {
     public static void main(String[] args) throws IOException {
 
-        Map<Dish.Type, List<Dish>> collect = menu.stream().collect(Collectors.groupingBy(Dish::getType, Collectors.collectingAndThen(toList(),
+        Map<Dish.Type, List<Dish>> collect = menu.stream().collect(Collectors.groupingBy(Dish::getType,
+                Collectors.collectingAndThen(toList(),
                 e -> e.stream().sorted(Comparator.comparing(Dish::getCalories).reversed()).collect(toList()))));
 
         Map<Dish.Type, Dish> max = menu.stream().collect(groupingBy(Dish::getType,
                 collectingAndThen(toList(), s -> s.stream().max(Comparator.comparing(Dish::getCalories)).get())));
 
 
-        Map<Dish.Type, List<String>> collect1 = menu.stream().collect(groupingBy(Dish::getType, mapping(Dish::getName, collectingAndThen(toList(),
+        Map<Dish.Type, List<String>> collect1 = menu.stream().collect(groupingBy(Dish::getType,
+                mapping(Dish::getName, collectingAndThen(toList(),
                 e -> e.stream().sorted().collect(toList())))));
 
-        Map<Dish.Type, Map<String, List<Dish>>> collect2 = menu.stream().collect(groupingBy(Dish::getType, groupingBy(Dish::getName, collectingAndThen(toList(), s ->
+        Map<Dish.Type, Map<String, List<Dish>>> collect2 = menu.stream().collect(groupingBy(Dish::getType,
+                groupingBy(Dish::getName, collectingAndThen(toList(), s ->
                 s.stream().sorted(Comparator.comparing(Dish::getCalories)).collect(toList())))));
 
 
@@ -44,7 +47,7 @@ public class Example {
             }
             builder.append(" ");
         }
-        System.out.println(builder.toString());
+        System.out.println();
 
 
 

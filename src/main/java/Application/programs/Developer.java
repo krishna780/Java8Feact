@@ -1,4 +1,4 @@
-package Application;
+package Application.programs;
 
 
 import lombok.AllArgsConstructor;
