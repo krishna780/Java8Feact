@@ -9,22 +9,15 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.security.*;
-import java.security.cert.CertificateException;
-import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 public class HttpClientEx {
     public static void main(String[] args) throws Exception {
-
-
 
         HttpRequest httpRequest= HttpRequest.newBuilder(URI.create("https://postman-echo.com/get"))
                 .GET()

@@ -21,7 +21,7 @@ public class Java8Ex {
                         .collect(toMap(Dish::getName, Dish::getCalories)).entrySet().stream()
                         .sorted(Map.Entry.comparingByValue()).collect(toList()))));
 
-        System.out.println(collect1);
+        System.out.println(collect);
 
 
     }

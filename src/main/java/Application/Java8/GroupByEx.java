@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 public class GroupByEx {
@@ -33,13 +32,13 @@ public class GroupByEx {
                         s -> s.stream().map(Item::getPrice).sorted().collect(Collectors.toList()))));
 
 
-        Map<BigDecimal, String> collect3 = items.stream().collect(Collectors.toMap(Item::getPrice,
-                 Item::getName));
+      /*  Map<BigDecimal, String> collect3 = items.stream().collect(Collectors.toMap(Item::getPrice,
+                 Item::getName));*/
         Map<BigDecimal, List<String>> collect4 = items.stream().collect(Collectors.groupingBy(Item::getPrice,
                 Collectors.collectingAndThen(Collectors.toList(), k -> k.stream().map(Item::getName)
                         .sorted(Collections.reverseOrder()).collect(Collectors.toList()))));
 
-        System.out.println(collect4);
+        System.out.println(collect);
 
     }
 }

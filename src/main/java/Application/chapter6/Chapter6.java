@@ -37,6 +37,8 @@ public class Chapter6 {
             transactionList.add(tran);
         }
 
+        transactionCurrency.forEach((k,v)-> System.out.println(k+"   "+v));
+
         Map<Currency, List<Transaction>> collect = transactions.stream().collect(groupingBy(Transaction::getCurrency));
 
 
